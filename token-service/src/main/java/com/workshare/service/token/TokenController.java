@@ -11,7 +11,7 @@ import com.workshare.service.token.bo.TokenBO;
 
 @Component
 @Path("/token")
-public class TokenService {
+public class TokenController {
     @Autowired
     TokenBO tokenBo;
 
@@ -22,5 +22,4 @@ public class TokenService {
 	return Response.status(200).entity(result).build();
 
     }
-
 }
