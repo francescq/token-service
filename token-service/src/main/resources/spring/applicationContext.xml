@@ -8,6 +8,6 @@
  
 	<context:component-scan base-package="com.workshare.services" />
  
-	<bean id="transactionBo" class="com.workshare.service.token.bo.impl.TransactionBoImpl" />
+	<bean id="tokenBo" class="com.workshare.service.token.bo.impl.TransactionBoImpl" />
  
 </beans>

@@ -25,7 +25,7 @@
 			<param-name>
                      com.sun.jersey.config.property.packages
             </param-name>
-			<param-value>com.workshare.services.token</param-value>
+			<param-value>com.workshare.service.token</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
