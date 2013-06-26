@@ -10,13 +10,31 @@
 		<pluginManagement>
 	      <plugins>
 	        <plugin>
-	          <groupId>org.apache.tomcat.maven</groupId>
-	          <artifactId>tomcat7-maven-plugin</artifactId>
-	          <version>2.0-beta-1</version>
-	          <configuration>
-	          	<server>TomcatServer</server>
-	          </configuration>
-	        </plugin>
+                <groupId>com.github.kongchen</groupId>
+                <artifactId>swagger-maven-plugin</artifactId>
+                <version>1.1-SNAPSHOT</version>
+                <configuration>
+                    <apiSources>
+                        <apiSource>
+                            <locations>com.foo.bar.apis;com.foo.bar.apis.internal.Resource</locations>
+                            <apiVersion>v1</apiVersion>
+                            <basePath>http://www.example.com</basePath>
+                            <outputTemplate>strapdown.html.mustache</outputTemplate>
+                            <outputPath>generated/strapdown.html</outputPath>
+                            <withFormatSuffix>false</withFormatSuffix>
+                            <swaggerDirectory>generated/apidocs</swaggerDirectory>
+                        </apiSource>
+                    </apiSources>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 			<!-- Maven compiler plugin -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -27,7 +45,18 @@
 			</plugin>
 	      </plugins>
 	    </pluginManagement>
-	</build>
+   	</build>
+   	
+   	<pluginRepositories>
+	        <pluginRepository>
+	            <id>com.github.kongchen</id>
+	            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+	            <snapshots>
+	                <enabled>true</enabled>
+	                <updatePolicy>always</updatePolicy>
+	            </snapshots>
+	        </pluginRepository>
+	    </pluginRepositories>
  
 	<dependencies>
  
